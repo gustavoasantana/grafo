@@ -1,0 +1,5 @@
+# AirportOri ; AirportDes ; distance ; codeAirline
+GRU;POA;409.333;G1
+GRU;RIO;409.333;A1
+POA;GRU;409.333;T1
+RIO;POA;23;T1
