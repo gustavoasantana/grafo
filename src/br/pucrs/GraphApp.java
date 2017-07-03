@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * Created by santana on 29/06/17.
+ * Created by Luis Santana e Luis Choma
  */
 public class GraphApp {
     private static Reader reader = new Reader(false);

@@ -3,7 +3,7 @@ package br.pucrs;
 import java.util.ArrayList;
 
 /**
- * Created by santana on 02/07/17.
+ * Created by Luis Santana e Luis Choma
  */
 public class Airport {
 
