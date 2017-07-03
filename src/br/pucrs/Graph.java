@@ -14,7 +14,6 @@ public class Graph {
     private ArrayList<Route> listaRoutes;
     private ArrayList<Airline> listaAirlines;
     private ArrayList<Country> listaCountries;
-    private Route[][] matrizRotas;
 
     public Graph(ArrayList<Airport> listaAirports, ArrayList<Route> listaRoutes, ArrayList<Airline> listaAirlines, ArrayList<Country> listaCountries) {
         this.listaAirports = listaAirports;
@@ -51,6 +50,26 @@ public class Graph {
 
     }
 
+    public void getMaiorGrau(){
+        int maior =0 , indice = 0 , cont = 0;
+        for (int i = 0; i < matrizRotas.length; i++) {
+            cont = 0;
+            for (int j = 0; j < matrizRotas.length; j++) {
+                if(matrizRotas[j][i] != null){
+                    cont++;
+                }
+            }
+            if(cont >= maior){
+                maior = cont;
+                indice = i;
+            }
+        }
+        Airport airport = listaAirports.get(indice);
+        System.out.println(airport.getName()+" "
+                + airport.getCode()+" "
+                + airport.getCountry()+ " "
+                + " Quantidade de voos: "+maior);
+    }
 
     @Override
     public String toString() {
