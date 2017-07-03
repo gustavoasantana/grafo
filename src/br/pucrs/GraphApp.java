@@ -1,24 +1,23 @@
 package br.pucrs;
 
-import com.sun.xml.internal.ws.message.ByteArrayAttachment;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.StringJoiner;
 
 /**
  * Created by santana on 29/06/17.
  */
 public class GraphApp {
-    private static Reader reader = new Reader(true);
+    private static Reader reader = new Reader(false);
     private static ArrayList<Route> routes= reader.getRoutes();
     private static ArrayList<Airport> airports= reader.getAirports();
     private static ArrayList<Airline> airlines= reader.getAirlines();
     private static ArrayList<Country> countries= reader.getCountries();
     private static Graph graph = new Graph(airports,routes,airlines,countries);
+    private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args){
-        Scanner scanner = new Scanner(System.in);
+
 
         int opcao;
 
@@ -33,7 +32,7 @@ public class GraphApp {
 
                 break;
                 case 3:
-
+                    adquirirNovoAviao();
                 break;
                 case 4:
                     aeroportoLotado();
@@ -50,6 +49,7 @@ public class GraphApp {
         System.out.println("2 - Verificar rota exclusiva");
         System.out.println("3 - Adquirir um novo avião");
         System.out.println("4 - Aeroporto super lotado");
+        System.out.println("5 - Sair");
     }
 
     public static void calculaMenorDistancia(){
@@ -57,10 +57,14 @@ public class GraphApp {
     }
 
     public static void adquirirNovoAviao(){
-
+        System.out.println("Informe a capacidade em Km do Aviao: ");
+        Double km = scanner.nextDouble();
+        System.out.println("Informe a sigla da companhia: ");
+        String companhia = scanner.next().trim();
+        System.out.println(graph.verificaNovoAviao(companhia,km));
     }
 
     public static void aeroportoLotado(){
-        graph.getMaiorGrau();
+        System.out.println(graph.getMaiorNumeroEntradaVoos());
     }
 }
