@@ -26,10 +26,10 @@ public class GraphApp {
             opcao = scanner.nextInt();
             switch (opcao){
                 case 1:
-
+                    System.out.println("Não implementado");
                 break;
                 case 2:
-
+                    System.out.println("Não implementado");
                 break;
                 case 3:
                     adquirirNovoAviao();
